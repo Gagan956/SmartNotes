@@ -21,12 +21,30 @@ const Port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors({ 
-    origin: process.env.FRONTEND_URL,
+const allowedOrigins = [
+  process.env.Frontend_URL,
+  "http://localhost:5173",
+  "https://smart-notes-3wld-holyid6vr-gagans-projects-27b6b951.vercel.app", // Vercel preview
+  "https://smart-notes-3wld.vercel.app", // main deployed frontend
+];
+
+// CORS middleware
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        console.warn(`CORS blocked request from origin: ${origin}`);
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true, 
-}))
+    credentials: true,
+  })
+);
 // Serve uploaded files
 app.use("/uploads", express.static("uploads"));
 
