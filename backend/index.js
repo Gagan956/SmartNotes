@@ -24,13 +24,10 @@ app.use(cookieParser());
 // CORS configuration
 app.use(
   cors({
-    origin: [
-      process.env.FRONTEND_URL,    // e.g. https://smart-notes-beta.vercel.app
-      "http://localhost:5173"      // allow local dev
-    ],
+    origin: "https://smart-notes-delta-sand.vercel.app", // your frontend URL
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,             // allow sending cookies
+    credentials: true, // if using cookies
   })
 );
 

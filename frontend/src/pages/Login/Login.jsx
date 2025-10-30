@@ -47,7 +47,7 @@ const Login = () => {
     
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/auth/signin`,
+        "https://smartnotes-2aes.onrender.com/api/auth/signin",
         { email, password },
         { withCredentials: true }
       );

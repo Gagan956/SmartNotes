@@ -39,7 +39,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
       }
 
       const res = await axios.post(
-       `${import.meta.env.VITE_API_URL}/api/note/edit/${noteId}`,
+       `https://smartnotes-2aes.onrender.com/api/note/edit/${noteId}`,
         data,
         config
       );
@@ -78,7 +78,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
       }
 
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/note/add`,
+        "https://smartnotes-2aes.onrender.com/api/note/add",
         data,
         config
       );

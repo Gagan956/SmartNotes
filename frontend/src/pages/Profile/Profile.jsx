@@ -42,7 +42,7 @@ const Profile = () => {
   const fetchProfile = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/auth/profile`,
+        "https://smartnotes-2aes.onrender.com/api/auth/profile",
         { withCredentials: true }
       );
 
@@ -69,7 +69,7 @@ const Profile = () => {
       if (photoFile) formData.append("profilePhoto", photoFile);
 
       const res = await axios.put(
-        `${import.meta.env.VITE_API_URL}/api/auth/profile`,
+        "https://smartnotes-2aes.onrender.com/api/auth/profile",
         formData,
         {
           withCredentials: true,

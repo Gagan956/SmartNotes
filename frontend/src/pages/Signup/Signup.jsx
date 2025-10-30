@@ -44,7 +44,7 @@ const Signup = () => {
     // sign up api
     try {
       const res = await axios.post(
-       `${import.meta.env.VITE_API_URL}/api/auth/signup`,
+       "https://smartnotes-2aes.onrender.com/api/auth/signup",
         { username: name, email, password },
         { withCredentials: true }
       )

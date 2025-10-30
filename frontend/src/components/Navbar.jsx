@@ -33,7 +33,7 @@ const Navbar = ({ userInfo, onSearchNote, handleClearSearch }) => {
   const onLogout = async () => {
     try {
       dispatch(signoutStart());
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/signout`, {
+      const res = await axios.get("https://smartnotes-2aes.onrender.com/api/auth/signout", {
         withCredentials: true,
       });
 
