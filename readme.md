@@ -1,57 +1,55 @@
-🧠 Smart Notes — MERN Stack App
+# 🧠 Smart Notes — MERN Stack App
 
-A full-stack notes management web application built with React, Node.js, Express, and MongoDB.
-Users can securely sign up, sign in, manage their profile, and create, edit, delete, and search notes with image uploads and pin functionality.
+A full-stack **Notes Management Web Application** built with **React, Node.js, Express, and MongoDB**.  
+Users can securely **sign up, log in, manage their profile, and create, edit, delete, search, and pin notes** — all with Cloudinary image uploads and JWT authentication.
 
-🚀 Tech Stack
-Frontend
+---
 
-React(Vite)
+## 🚀 Tech Stack
 
-Redux Toolkit (state management)
+### 🖥️ Frontend
+- ⚛️ **React (Vite)**
+- 🧩 **Redux Toolkit** — State Management
+- 🎨 **Tailwind CSS** — Modern, responsive UI
+- 🌐 **Axios** — API communication
+- 🔔 **React Toastify** — Notifications
 
-Tailwind CSS (UI styling)
+### ⚙️ Backend
+- 🧠 **Node.js + Express.js**
+- 🗄️ **MongoDB + Mongoose** — Database
+- ☁️ **Cloudinary** — Image Storage
+- 🔐 **JWT** — Authentication
+- 📸 **Multer** — File Uploads
+- 🔄 **CORS** — Secure cross-origin access
 
-Axios (API communication)
+---
 
-React Toastify (notifications)
+## ✨ Features
 
-Backend
+✅ Secure User Authentication (Signup / Signin / Signout)  
+✅ JWT-based Protected Routes  
+✅ Profile Management with Image Upload  
+✅ CRUD Operations for Notes  
+✅ Search & Filter Functionality  
+✅ Pin Notes for Quick Access  
+✅ Note Statistics (Total, Pinned, Recent, Top Tags)  
+✅ Cloudinary Image Upload Integration  
+✅ Fully Responsive Dashboard UI  
 
-Node.js + Express.js
+---
 
-MongoDB + Mongoose (database)
+## 🧩 Backend API Routes
 
-Cloudinary (image storage)
-
-JWT (authentication)
-
-Multer (file upload)
-
-CORS (secure cross-origin communication)
-
-⚙️ Features
-
-✅ User Authentication (Signup / Signin / Signout)
-✅ JWT-based Secure Routes
-✅ Profile Management (with image upload)
-✅ CRUD Operations for Notes
-✅ Search & Filter Notes
-✅ Pin Notes for Quick Access
-✅ Note Statistics (total, pinned, recent, top tags)
-✅ Image Upload via Cloudinary
-✅ Responsive Dashboard (Frontend)
-
-
-🧩 Backend API Routes
-🔐 Auth Routes
+### 🔐 Auth Routes
+```js
 router.post("/signup", upload.single("profilePhoto"), signup)
 router.post("/signin", signin)
 router.get("/signout", verifyToken, signout)
 router.get("/profile", verifyToken, getProfile)
 router.put("/profile", verifyToken, upload.single("profilePhoto"), updateProfile)
 
-📝 Note Routes
+
+Note Routes
 router.post("/add", verifyToken, upload.single("image"), addNote)
 router.post("/edit/:noteId", verifyToken, editNote)
 router.get("/all", verifyToken, getAllNotes)
@@ -60,15 +58,14 @@ router.delete("/delete/:noteId", verifyToken, deleteNote)
 router.put("/update-note-pinned/:noteId", verifyToken, updateNotePinned)
 router.get("/search", verifyToken, searchNote)
 
+
+
 🧠 Authentication Flow
 
-Signup: Create account with optional profile photo → JWT cookie issued
-
-Signin: Authenticate with email & password → JWT cookie issued
-
-Signout: Clear JWT cookie from client
-
-Protected Routes: All note APIs require valid JWT token
+🔸 Signup → Create account with optional profile photo → JWT cookie issued
+🔸 Signin → Authenticate with email & password → JWT cookie issued
+🔸 Signout → Clear JWT cookie from client
+🔸 Protected Routes → Accessible only with valid JWT token
 
 🔧 Environment Variables
 
@@ -84,18 +81,28 @@ FRONTEND_URL=https://your-frontend.vercel.app
 
 📬 Postman Collection / API Docs
 
-You can test APIs using the Postman collection available in:
-/backend/docs/SmartNotes.postman_collection.json
+Test the APIs easily using the Postman collection:
 
-Includes all endpoints for Auth and Notes CRUD.
+📁 /backend/docs/SmartNotes.postman_collection.json
+
+Includes all endpoints for:
+
+🔐 Authentication
+
+📝 Notes CRUD
+
+📊 Stats & Search
 
 🖥️ Setup Instructions
-Backend
+🔹 Backend
 cd backend
 npm install
 npm run dev
 
-Frontend
+🔹 Frontend
 cd frontend
 npm install
 npm run dev
+
+
+Visit ➜ http://localhost:5173
