@@ -25,6 +25,16 @@ app.use(cors({ origin: process.env.Frontend_URL, credentials: true }));
 // Serve uploaded files
 app.use("/uploads", express.static("uploads"));
 
+
+const PORT = process.env.PORT || 8080
+
+app.get("/", (req, res) => {
+    res.json({
+        message: "Server is running",
+        port: PORT
+    })
+})
+  
 app.listen(Port, () => {
   console.log("Server is running on port ", Port);
 });
