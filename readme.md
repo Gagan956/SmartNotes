@@ -6,7 +6,7 @@ Users can securely sign up, sign in, manage their profile, and create, edit, del
 🚀 Tech Stack
 Frontend
 
-React + TypeScript (Vite)
+React(Vite)
 
 Redux Toolkit (state management)
 
