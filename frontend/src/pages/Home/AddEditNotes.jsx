@@ -39,7 +39,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
       }
 
       const res = await axios.post(
-        import.meta.env.VITE_API_URL + `/note/edit/${noteId}`,
+       `${import.meta.env.VITE_API_URL}/api/note/edit/${noteId}`,
         data,
         config
       );
@@ -78,7 +78,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
       }
 
       const res = await axios.post(
-        import.meta.env.VITE_API_URL + "/note/add",
+        `${import.meta.env.VITE_API_URL}/api/note/add`,
         data,
         config
       );

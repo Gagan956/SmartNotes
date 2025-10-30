@@ -20,8 +20,13 @@ const Port = process.env.PORT || 3000;
 // to make input as json
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: process.env.Frontend_URL, credentials: true }));
 
+app.use(cors({ 
+    origin: process.env.Frontend_URL, 
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, 
+}))
 // Serve uploaded files
 app.use("/uploads", express.static("uploads"));
 

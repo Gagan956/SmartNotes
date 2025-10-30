@@ -37,7 +37,7 @@ const Home = () => {
   const getAllNotes = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get(import.meta.env.VITE_API_URL + "/note/all", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/note/all`, {
         withCredentials: true,
       });
 
@@ -66,7 +66,7 @@ const Home = () => {
 
     try {
       const res = await axios.delete(
-        import.meta.env.VITE_API_URL + `/note/delete/${noteId}`,
+        `${import.meta.env.VITE_API_URL}/api/note/delete/${noteId}`,
         { withCredentials: true }
       );
 
@@ -91,7 +91,7 @@ const Home = () => {
     }
 
     try {
-      const res = await axios.get(import.meta.env.VITE_API_URL + "/note/search", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/note/search`, {
         params: { query },
         withCredentials: true,
       });
@@ -119,7 +119,7 @@ const Home = () => {
 
     try {
       const res = await axios.put(
-        import.meta.env.VITE_API_URL + `/note/update-note-pinned/${noteId}`,
+        `${import.meta.env.VITE_API_URL}/api/note/update-note-pinned/${noteId}`,
         { isPinned: !noteData.isPinned },
         { withCredentials: true }
       );
